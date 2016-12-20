@@ -1,10 +1,58 @@
 "use strict";
 
-document.getElementById("val").addEventListener("click", function () {
-	hello();
+// for (var i = 0; i < mytab.length; i++) {
+// 	let mytabFor = mytab[i]
+// 	 // console.log(mytab[i].nom)
+// 	 console.log(mytab[i])
+// 	 console.log(i)
+// 	 console.log(mytabFor[0]);
+// 	 // if (true) {}
+// }
+
+document.getElementById("clear").addEventListener("click", function () {
+	console.log("clear");
+	document.getElementById("resultSearch").innerHTML = "";
 });
+
+document.getElementById("val").addEventListener("click", function () {
+
+	hello();
+	console.log(mytab);
+});
+
+document.getElementById("valSearch").addEventListener("click", function () {
+	var valueSearch = document.getElementById("search").value;
+	// console.log(valueSearch)
+	console.log(mytab);
+	for (var i = 0; i < mytab.length; i++) {
+		var _mytabFor = mytab[i];
+		console.log(_mytabFor.length);
+		// console.log(mytab[i].nom)
+		console.log(mytab[i][i]);
+
+		console.log(valueSearch);
+		// console.log()
+		if (mytab[i][0] === valueSearch) {
+			// document.getElementById("resultSearch").innerHTML = mytab
+			// document.getElementById("resultSearch").innerHTML = mytab[i]
+			document.getElementById("resultSearch").appendChild(document.createElement('li')).innerHTML = mytab[i];
+
+			// document.getElementById("resultSearch").innerHTML = mytab[i]
+			console.log("yep trouver");
+			console.log(i);
+			console.log(mytab[i]);
+		}
+		// else if (mytab[i][0] !== valueSearch) {
+		// 		console.log("")
+		//  // document.getElementById("resultSearch").innerHTML = "Aucun resultat !"
+		// }
+
+	}
+});
+
 var person = undefined;
-var mytab = ["Père Noël", "laal", "dylan", "bernard"];
+var mytab = ["dylan", "rudy", "arsene", "pere Noël", "philipe", "axel"];
+var mytabFor = undefined;
 var hello = function hello(person) {
 	if (document.getElementById("nom").value === "") {
 		person = "Père Noël";
@@ -15,9 +63,9 @@ var hello = function hello(person) {
 	var say = "Bonjour " + person;
 	var nom = "" + person;
 	var insertSay = document.getElementById("sayIt").innerHTML = say;
-	console.log(insertSay);
-	console.log(say);
-	console.log(mytab);
+	// console.log(insertSay)
+	// console.log(say)
+	// console.log(mytab)
 	mytab.push(nom);
 
 	var historique = document.getElementById("historique");
@@ -27,9 +75,11 @@ var hello = function hello(person) {
 
 	for (var i = 0; i < nom.length; i++) {
 
-		console.log(nom[0]);
+		// console.log(nom[i])
 	}
+
 	document.getElementById("nom").value = "";
+
 	// document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = nom
 
 };
