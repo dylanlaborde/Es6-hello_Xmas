@@ -2,11 +2,8 @@ document.getElementById("val").addEventListener("click", ()=>{
 	hello();
 })
 let person = undefined
-let mytab = []
-
-
+let mytab = ["Père Noël", "laal", "dylan", "bernard"]
 let hello =(person)=>{
-
 	if (document.getElementById("nom").value === "") {
 		person = "Père Noël"
 	}
@@ -14,29 +11,37 @@ let hello =(person)=>{
 		person = document.getElementById("nom").value
 		
 	}
-	
+
 	const say = `Bonjour ${person}` 
+	const nom = `${person}` 
 	const insertSay = document.getElementById("sayIt").innerHTML = say 
-	 console.log(insertSay)
-	 console.log(say)
-	 mytab.push(say)
-	 console.log(mytab)
-		// let test = document.createElement('li').innerHTML = mytab[i]
-	 // console.log(document.createElement('li')+ mytab.length)
-	 // document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = mytab
+	console.log(insertSay)
+	console.log(say)
+	console.log(mytab)
+	mytab.push(nom)
 
-	// document.getElementById("historique").innerHTML = mytab.length
-document.getElementById("nom").value = ""
-	  document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = say
+	let historique = document.getElementById("historique")
+	let li = document.createElement('li')
 
-	// for (var i = 0; i < mytab.length; i++) {
-	// 	 console.log(mytab[i])
-	//   document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = mytab[i]
-	//  // document.getElementById("historique")
-	// 	// console.log(mytab.length -1)
-	// }
+	historique.appendChild(li).innerHTML = nom
+	
+	for (var i = 0; i < nom.length; i++) {
+
+		console.log(nom[0])
+	}
+	document.getElementById("nom").value = ""
+	// document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = nom
+
 
 }
+
+
+
+
+
+
+
+
 
 
 

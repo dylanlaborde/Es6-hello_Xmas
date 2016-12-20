@@ -4,10 +4,8 @@ document.getElementById("val").addEventListener("click", function () {
 	hello();
 });
 var person = undefined;
-var mytab = [];
-
+var mytab = ["Père Noël", "laal", "dylan", "bernard"];
 var hello = function hello(person) {
-
 	if (document.getElementById("nom").value === "") {
 		person = "Père Noël";
 	} else {
@@ -15,23 +13,23 @@ var hello = function hello(person) {
 	}
 
 	var say = "Bonjour " + person;
+	var nom = "" + person;
 	var insertSay = document.getElementById("sayIt").innerHTML = say;
 	console.log(insertSay);
 	console.log(say);
-	mytab.push(say);
 	console.log(mytab);
-	// let test = document.createElement('li').innerHTML = mytab[i]
-	// console.log(document.createElement('li')+ mytab.length)
-	// document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = mytab
+	mytab.push(nom);
 
-	// document.getElementById("historique").innerHTML = mytab.length
+	var historique = document.getElementById("historique");
+	var li = document.createElement('li');
+
+	historique.appendChild(li).innerHTML = nom;
+
+	for (var i = 0; i < nom.length; i++) {
+
+		console.log(nom[0]);
+	}
 	document.getElementById("nom").value = "";
-	document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = say;
+	// document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = nom
 
-	// for (var i = 0; i < mytab.length; i++) {
-	// 	 console.log(mytab[i])
-	//   document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = mytab[i]
-	//  // document.getElementById("historique")
-	// 	// console.log(mytab.length -1)
-	// }
 };
