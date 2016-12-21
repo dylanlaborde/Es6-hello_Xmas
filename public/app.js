@@ -9,10 +9,6 @@
 // 	 // if (true) {}
 // }
 
-document.getElementById("clear").addEventListener("click", function () {
-	console.log("clear");
-	document.getElementById("resultSearch").innerHTML = "";
-});
 
 document.getElementById("val").addEventListener("click", function () {
 
@@ -26,11 +22,14 @@ document.getElementById("valSearch").addEventListener("click", function () {
 	console.log(mytab);
 	for (var i = 0; i < mytab.length; i++) {
 		var _mytabFor = mytab[i];
-		console.log(_mytabFor.length);
-		// console.log(mytab[i].nom)
-		console.log(mytab[i][i]);
+		// console.log(mytabFor.length)
+		console.log(mytab[1][i]);
 
-		console.log(valueSearch);
+		// console.log(mytab[i].nom)
+		// console.log(mytab[i][0])
+
+
+		// console.log(valueSearch)
 		// console.log()
 		if (mytab[i][0] === valueSearch) {
 			// document.getElementById("resultSearch").innerHTML = mytab
@@ -46,7 +45,7 @@ document.getElementById("valSearch").addEventListener("click", function () {
 		// 		console.log("")
 		//  // document.getElementById("resultSearch").innerHTML = "Aucun resultat !"
 		// }
-
+		document.getElementById("search").value = "";
 	}
 });
 

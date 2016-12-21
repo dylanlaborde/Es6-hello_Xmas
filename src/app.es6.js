@@ -8,10 +8,7 @@
 	// 	 // if (true) {}
 	// }
 
-	document.getElementById("clear").addEventListener("click", ()=>{
-		console.log("clear")
-		document.getElementById("resultSearch").innerHTML = ""
-	})
+	
 
 	document.getElementById("val").addEventListener("click", ()=>{
 
@@ -25,13 +22,15 @@
 	console.log(mytab)
 	for (var i = 0; i < mytab.length; i++) {
 		let mytabFor = mytab[i]
-		console.log(mytabFor.length)
+		// console.log(mytabFor.length)
+		console.log(mytab[1][i])
+
 		 // console.log(mytab[i].nom)
-		 console.log(mytab[i][i])
+		 // console.log(mytab[i][0])
 
 
 
-		 console.log(valueSearch)
+		 // console.log(valueSearch)
 		 // console.log()
 		 if (mytab[i][0] === valueSearch) {
 		 	// document.getElementById("resultSearch").innerHTML = mytab
@@ -47,7 +46,7 @@
 		  // 		console.log("")
 		 	//  // document.getElementById("resultSearch").innerHTML = "Aucun resultat !"
 		  // }
-
+		  document.getElementById("search").value = ""
 
 		}
 	})
@@ -86,6 +85,8 @@
 
 
 	document.getElementById("nom").value = ""
+	
+	
 
 	// document.getElementById("historique").appendChild(document.createElement('li')).innerHTML = nom
 
